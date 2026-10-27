@@ -16,7 +16,7 @@
  * @module video-plugin
  */
 
-import { render, Templates } from 'nuckty';
+import { render, Templates } from '@nuckty/core';
 import type { Plugin } from 'unified';
 import type { Root, Paragraph, Html, Link, Text, PhrasingContent } from 'mdast';
 
@@ -132,4 +132,3 @@ function matchEmbed(
  * via `env.markdown.use(remarkVideoEmbed)`.
  */
 export const remarkVideoEmbed: Plugin<[], Root> = createVideoPlugin();
-

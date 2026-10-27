@@ -1,5 +1,5 @@
 /**
- * nuckty-ext-markdown-video — video embed via `@[provider](id)` (a markdown-extension).
+ * @nuckty/ext-markdown-video — video embed via `@[provider](id)` (a markdown-extension).
  *
  * Registers a remark mdast plugin via `env.markdown.use(remarkVideoEmbed)`
  * (openspec `ext-markdown-video`): it walks mdast before the mdast → BEMJSON bridge
@@ -11,10 +11,10 @@
  * Default providers: YouTube, RuTube, VK. A site loads this extension to get
  * video embeds; without it, `@[youtube](id)` renders as ordinary text + link.
  *
- * @module nuckty-ext-markdown-video
+ * @module @nuckty/ext-markdown-video
  */
 
-import type { NucktyEnv } from 'nuckty';
+import type { NucktyEnv } from '@nuckty/core';
 export { remarkVideoEmbed, createVideoPlugin, DEFAULT_VIDEO_PROVIDERS } from './video-plugin.js';
 export type { VideoProvider } from './video-plugin.js';
 
@@ -25,4 +25,3 @@ export function register(env: NucktyEnv): void {
 }
 
 export default register;
-

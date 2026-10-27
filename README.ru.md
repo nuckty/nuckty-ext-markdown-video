@@ -1,4 +1,4 @@
-# nuckty-ext-markdown-video
+# @nuckty/ext-markdown-video
 
 > **Встраивание видео — конструкция `@[provider](id)`.**
 
@@ -24,9 +24,9 @@ Markdown-расширение для [nuckty](https://github.com/nuckty/nuckty).
 Пакет экспортирует `createVideoPlugin` и `DEFAULT_VIDEO_PROVIDERS`. Свой провайдер задаётся именем и функцией, которая строит URL:
 
 ```ts
-import { createVideoPlugin, DEFAULT_VIDEO_PROVIDERS } from 'nuckty-ext-markdown-video';
+import { createVideoPlugin, DEFAULT_VIDEO_PROVIDERS } from '@nuckty/ext-markdown-video';
 
-import type { NucktyEnv } from 'nuckty';
+import type { NucktyEnv } from '@nuckty/core';
 
 export function register(env: NucktyEnv): void {
     env.markdown.use(createVideoPlugin([
@@ -36,22 +36,22 @@ export function register(env: NucktyEnv): void {
 }
 ```
 
-Сохраните модуль как `ext/video.ts` и укажите `./ext/video.ts` в `ext` вместо `nuckty-ext-markdown-video`. Использование обоих одновременно повторно зарегистрирует преобразование. Для VK доступны идентификатор `-123_456` и полный адрес HTTPS `video_ext.php` на vk.com, vk.ru или vkvideo.ru; некорректный аргумент VK вызывает ошибку. Встроенный iframe может загружать код стороннего плеера; само расширение не добавляет бандл JS.
+Сохраните модуль как `ext/video.ts` и укажите `./ext/video.ts` в `ext` вместо `@nuckty/ext-markdown-video`. Использование обоих одновременно повторно зарегистрирует преобразование. Для VK доступны идентификатор `-123_456` и полный адрес HTTPS `video_ext.php` на vk.com, vk.ru или vkvideo.ru; некорректный аргумент VK вызывает ошибку. Встроенный iframe может загружать код стороннего плеера; само расширение не добавляет бандл JS.
 
 ## Как подключить
 
 ```bash
-npm install nuckty-ext-markdown-video
+npm install @nuckty/ext-markdown-video
 ```
 
-Пример продолжает быстрый старт со стандартным обработчиком `nuckty-ext-block-root`. Добавьте новое расширение в `ext` глобального `config/config-nuckty.ts`, сохранив остальные записи. Если обработчик документа собственный, оставьте его вместо `nuckty-ext-block-root`.
+Пример продолжает быстрый старт со стандартным обработчиком `@nuckty/ext-block-root`. Добавьте новое расширение в `ext` глобального `config/config-nuckty.ts`, сохранив остальные записи. Если обработчик документа собственный, оставьте его вместо `@nuckty/ext-block-root`.
 
 ```ts
-import { defineNucktyConfig } from 'nuckty';
+import { defineNucktyConfig } from '@nuckty/core';
 
 export default defineNucktyConfig({
     targets: { main: { configDir: 'config/', outDir: 'site/' } },
-    ext: ['nuckty-ext-block-root', 'nuckty-ext-markdown-video'],
+    ext: ['@nuckty/ext-block-root', '@nuckty/ext-markdown-video'],
 });
 ```
 
@@ -68,4 +68,3 @@ export default defineNucktyConfig({
 ## Лицензия
 
 MIT.
-

@@ -1,5 +1,5 @@
 {
-    "name": "nuckty-ext-markdown-video",
+    "name": "@nuckty/ext-markdown-video",
     "version": "1.0.0-beta1",
     "license": "MIT",
     "repository": {
@@ -7,7 +7,8 @@
         "url": "git@github.com:nuckty/nuckty-ext-markdown-video.git"
     },
     "publishConfig": {
-        "registry": "https://registry.npmjs.org"
+        "registry": "https://registry.npmjs.org",
+        "access": "public"
     },
     "description": "nuckty markdown-extension: video embed via @[provider](id)",
     "type": "module",
@@ -22,7 +23,7 @@
     "devDependencies": {
         "@types/mdast": "4.0.4",
         "@types/node": "24.13.3",
-        "nuckty": "file:../nuckty",
+        "@nuckty/core": "file:../nuckty",
         "remark-parse": "11.0.0",
         "tsx": "4.23.12",
         "typescript": "7.0.2",
@@ -32,11 +33,10 @@
         "dist"
     ],
     "peerDependencies": {
-        "nuckty": "1.0.0-beta1"
+        "@nuckty/core": "1.0.0-beta1"
     },
     "author": {
         "name": "Vitaly Harisov",
         "email": "vitaly@harisov.name"
     }
 }
-
